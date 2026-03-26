@@ -4,16 +4,33 @@ A collection of high-quality, local-first OpenClaw skills. Every skill works wit
 
 ## Skills
 
+### Personal Productivity
+
 | Skill | Description | Install |
 |---|---|---|
 | [rss-digest](./rss-digest) | RSS/Atom feed aggregator with keyword filtering and cron scheduling | `npx clawhub@latest install nai-rss-digest` |
 | [local-budget](./local-budget) | Bank CSV spending analyzer with auto-format detection (Chase, BoA, generic) | `npx clawhub@latest install nai-local-budget` |
 | [file-organizer](./file-organizer) | Directory cleanup wizard with duplicate detection — never deletes, only moves | `npx clawhub@latest install nai-file-organizer` |
-| [changelog-watcher](./changelog-watcher) | GitHub + npm release monitor with breaking change detection | `npx clawhub@latest install nai-changelog-watcher` |
 | [habit-tracker](./habit-tracker) | Local streak tracking with weekly reviews and Obsidian integration | `npx clawhub@latest install nai-habit-tracker` |
 | [price-watcher](./price-watcher) | Product URL price monitoring with multi-pass extraction and alerts | `npx clawhub@latest install nai-price-watcher` |
 | [meeting-notes](./meeting-notes) | Raw notes → action items, decisions, and attendees for Obsidian | `npx clawhub@latest install nai-meeting-notes` |
 | [morning-briefing](./morning-briefing) | Composable daily brief that adapts to your installed skills and data sources | `npx clawhub@latest install nai-morning-briefing` |
+
+### Developer & DevOps
+
+| Skill | Description | Install |
+|---|---|---|
+| [changelog-watcher](./changelog-watcher) | GitHub + npm release monitor with breaking change detection | `npx clawhub@latest install nai-changelog-watcher` |
+| [container-update-advisor](./container-update-advisor) | Docker container update checker with changelog summarization and risk assessment | `npx clawhub@latest install nai-container-update-advisor` |
+| [homelab-runbook](./homelab-runbook) | Auto-generates Markdown runbooks from running services, containers, and open ports | `npx clawhub@latest install nai-homelab-runbook` |
+
+### Hardware & IoT
+
+| Skill | Description | Install |
+|---|---|---|
+| [disk-guardian](./disk-guardian) | S.M.A.R.T. drive health monitoring with trend detection and risk ranking | `npx clawhub@latest install nai-disk-guardian` |
+| [filament-vault](./filament-vault) | 3D printing filament inventory tracker with spending reports and low-stock alerts | `npx clawhub@latest install nai-filament-vault` |
+| [garden-planner](./garden-planner) | Garden planning with planting calendars, frost alerts, and watering schedules | `npx clawhub@latest install nai-garden-planner` |
 
 ## Design Principles
 
@@ -21,6 +38,7 @@ A collection of high-quality, local-first OpenClaw skills. Every skill works wit
 - **Zero dependencies** — Python standard library only. No pip install required.
 - **No API keys** — Every skill works out of the box with no configuration.
 - **Obsidian-friendly** — Output is clean markdown with frontmatter, perfect for your vault.
+- **Cross-platform** — Most skills work on both macOS and Linux.
 - **Cron-ready** — Most skills are designed to run on a schedule via OpenClaw cron.
 
 ## Installation
