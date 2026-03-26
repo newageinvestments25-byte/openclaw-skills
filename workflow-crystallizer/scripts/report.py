@@ -266,46 +266,33 @@ def main():
     args = parser.parse_args()
 
     # Read clusters
+    clusters = []
     if args.clusters:
         with open(args.clusters) as f:
             clusters = json.load(f)
-    else:
-        # Try reading both clusters and suggestions from stdin (piped)
-        data = json.load(sys.stdin)
-        # Heuristic: if the data has "confidence" and "events", it's clusters
-        # If it has "type" and "implementation", it's suggestions
-        if data and isinstance(data, list):
-            if "implementation" in (data[0] if data else {}):
-                clusters = []
-                suggestions_data = data
-            else:
-                clusters = data
-                suggestions_data = []
-        else:
-            clusters = []
-            suggestions_data = []
-
-        if args.suggestions:
-            with open(args.suggestions) as f:
-                suggestions_data = json.load(f)
-        elif 'suggestions_data' not in locals():
-            suggestions_data = []
-
-        report = format_report(clusters, suggestions_data, args.state_file)
-
-        if args.output:
-            Path(args.output).write_text(report)
-            sys.stderr.write(f"Report written to {args.output}\n")
-        else:
-            print(report)
-        return
 
     # Read suggestions
     suggestions_data = []
     if args.suggestions:
         with open(args.suggestions) as f:
             suggestions_data = json.load(f)
+    elif not sys.stdin.isatty():
+        # Read from stdin (piped from generate_suggestions)
+        try:
+            data = json.load(sys.stdin)
+            if data and isinstance(data, list):
+                # Auto-detect: suggestions have "implementation" key, clusters don't
+                if data and "implementation" in data[0]:
+                    suggestions_data = data
+                else:
+                    clusters = data
+            elif data and isinstance(data, dict):
+                suggestions_data = [data]
+        except (json.JSONDecodeError, IndexError):
+            pass
 
+    # If we have state but no clusters, note it — the report will still show
+    # suggestions and state-based history without the full cluster analysis.
     report = format_report(clusters, suggestions_data, args.state_file)
 
     if args.output:

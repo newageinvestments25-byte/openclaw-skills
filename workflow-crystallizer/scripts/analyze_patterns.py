@@ -269,7 +269,7 @@ def similarity_score(event_a: dict, event_b: dict) -> float:
     return min(score, 1.0)
 
 
-def cluster_events(events: list[dict], threshold: float = 0.25) -> list[list[dict]]:
+def cluster_events(events: list[dict], threshold: float = 0.30) -> list[list[dict]]:
     """Greedy single-linkage clustering of events by similarity."""
     if not events:
         return []
