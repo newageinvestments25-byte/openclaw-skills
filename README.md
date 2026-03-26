@@ -1,6 +1,6 @@
 # OpenClaw Skills by New Age Investments
 
-A collection of high-quality, local-first OpenClaw skills. Every skill works without external API keys and uses only Python standard library — zero dependencies, maximum privacy.
+A growing collection of high-quality, local-first OpenClaw skills. Every skill works without external API keys and uses only Python standard library — zero dependencies, maximum privacy.
 
 ## Skills
 
@@ -23,6 +23,7 @@ A collection of high-quality, local-first OpenClaw skills. Every skill works wit
 | [changelog-watcher](./changelog-watcher) | GitHub + npm release monitor with breaking change detection | `npx clawhub@latest install nai-changelog-watcher` |
 | [container-update-advisor](./container-update-advisor) | Docker container update checker with changelog summarization and risk assessment | `npx clawhub@latest install nai-container-update-advisor` |
 | [homelab-runbook](./homelab-runbook) | Auto-generates Markdown runbooks from running services, containers, and open ports | `npx clawhub@latest install nai-homelab-runbook` |
+| [status-page-gen](./status-page-gen) | Self-contained HTML status page generator with uptime tracking and SSL cert monitoring | `npx clawhub@latest install nai-status-page-gen` |
 
 ### Hardware & IoT
 
@@ -31,6 +32,15 @@ A collection of high-quality, local-first OpenClaw skills. Every skill works wit
 | [disk-guardian](./disk-guardian) | S.M.A.R.T. drive health monitoring with trend detection and risk ranking | `npx clawhub@latest install nai-disk-guardian` |
 | [filament-vault](./filament-vault) | 3D printing filament inventory tracker with spending reports and low-stock alerts | `npx clawhub@latest install nai-filament-vault` |
 | [garden-planner](./garden-planner) | Garden planning with planting calendars, frost alerts, and watering schedules | `npx clawhub@latest install nai-garden-planner` |
+| [print-failure-analyst](./print-failure-analyst) | 3D print failure diagnosis with slicer fix recommendations for PrusaSlicer/Cura/OrcaSlicer | `npx clawhub@latest install nai-print-failure-analyst` |
+| [homelab-assets](./homelab-assets) | Hardware inventory and asset tracker with depreciation, power costs, and warranty alerts | `npx clawhub@latest install nai-homelab-assets` |
+
+### Network & Connectivity
+
+| Skill | Description | Install |
+|---|---|---|
+| [isp-throttle-detective](./isp-throttle-detective) | ISP speed monitoring with throttling detection and evidence reports | `npx clawhub@latest install nai-isp-throttle-detective` |
+| [net-detective](./net-detective) | Network diagnostic tool with DNS, ping, traceroute, and plain-English diagnosis | `npx clawhub@latest install nai-net-detective` |
 
 ## Design Principles
 
